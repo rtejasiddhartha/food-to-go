@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/Style.css">
+  <title>Food-To-Go</title>
+<link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- HEADER -->
+<header class="bg-gray-900 text-white px-6 py-4 flex justify-between items-center sticky top-0 z-50 shadow">
+  <!-- Logo Left -->
+  <a href="Homepage.html">
+    <img src="images/FoodToGoLogo.png" alt="Food To Go Logo" class="h-12">
+  </a>
+<h1 class="text-2xl font-bold text-center absolute left-1/2 transform -translate-x-1/2" style="font-family: 'Urbanist', sans-serif;">
+  Food-To-Go
+</h1>
+<!--<button onclick="document.getElementById('loginModal').classList.remove('hidden')" class="bg-gray-800 text-white px-4 py-2 rounded">Login</button>-->
+<!-- Right side: Cart + Login -->
+<div class="flex items-center space-x-4">
+  <!-- Login Button -->
+  <button onclick="document.getElementById('loginModal').classList.remove('hidden')" class="text-sm bg-white text-gray-900 px-3 py-1.5 rounded hover:bg-gray-200 transition">
+    Login
+  </button>  
+<button onclick="toggleCart()" class="relative ml-4">
+   <!-- Heroicon Shopping Cart -->
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-8 w-8 text-white">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-1.2 6M17 13l1.2 6M6 19h12"/>
+</svg>
+  <span id="cart-badge" class="absolute -top-2 -right-2 bg-red-600 text-white text-xs px-1.5 rounded-full">0</span>
+</button>
+</div>
+
+</header>
+
+  <!-- NAVBAR -->
+  <nav class="bg-gray-800 text-white">
+    <ul class="flex flex-col items-center space-y-3 py-6 text-lg font-semibold">
+      <li><a href="index.html" class="hover:text-yellow-300">HOME</a></li>
+      <li><a href="Christmas.html" class="hover:text-yellow-300">CHRISTMAS</a></li>
+      <li><a href="Newyear.html" class="hover:text-yellow-300">NEW YEAR</a></li>
+      <li><a href="Feeds.html" class="hover:text-yellow-300">FEEDS</a></li>
+      <li><a href="FAQ.html" class="hover:text-yellow-300">FAQ</a></li>
+      <li><a href="ContactUs.html" class="hover:text-yellow-300">CONTACT US</a></li>
+    </ul>
+  </nav>
+
+  <!-- BANNER WITH RESPONSIVE TEXT -->
+  <div class="relative">
+    <img src="images/Christmas-2020.jpg" alt="Christmas Banner" class="w-full object-cover h-[300px] md:h-[450px]" />
+    <h1 class="absolute inset-0 flex items-center justify-center text-white text-2xl sm:text-4xl md:text-5xl font-bold text-center bg-black bg-opacity-40 p-4">
+      FOOD TO GO BOXES <br /> TO ORDER NOW
+    </h1>
+  </div>
+
+  <!-- PROMISE 1 -->
+  <div class="bg-white px-6 py-8 text-center">
+    <p class="text-xl font-bold text-red-600 mb-2">🎄 Christmas Food to Order is Still Open</p>
+    <p class="max-w-3xl mx-auto text-gray-700 mb-4">
+      We have everything you need in store — including our fresh Select farms turkeys, available now to enjoy for Christmas Day.
+      Plus, to make your shop safer and more convenient, we've introduced extended opening hours and a special Book & Shop service.
+      <br /><br />
+      <a href="Christmas.html" class="inline-block mt-3 text-blue-600 font-medium underline hover:text-blue-800">
+        See What's in our store →
+      </a>
+    </p>
+  </div>
+<div class="text-center py-4 bg-yellow-100 text-yellow-900 font-semibold text-lg">
+  ⏳ Time left to pre-order: <span id="countdown"></span>
+</div>
+    <script>
+  const countdown = document.getElementById("countdown");
+  const deadline = new Date("December 20, 2025 23:59:59").getTime();
+
+  setInterval(() => {
+    const now = new Date().getTime();
+    const timeleft = deadline - now;
+
+    if (timeleft > 0) {
+      const days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const mins = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
+      countdown.innerText = `${days}d ${hours}h ${mins}m`;
+    } else {
+      countdown.innerText = "Orders Closed!";
+    }
+  }, 1000);
+</script>
+  <!-- NEW YEAR EVE IMAGE -->
+  <div class="w-full">
+    <img src="images/newyeareve.jpg" alt="New Year Eve" class="w-full h-auto object-cover" />
+  </div>
+
+  <!-- PROMISE 2 -->
+  <div class="bg-white px-6 py-8 text-center">
+    <p class="text-xl font-bold text-green-700 mb-2">–– OUR PROMISE ––</p>
+    <p class="max-w-3xl mx-auto text-gray-700">
+      We guarantee that you will receive the same great shelf life on each and every food item regardless of the date you collect your New Year's Eve order.
+    </p>
+  </div>
+<!-- SECTION: FTG CHRISTMAS BOXES -->
+<section class="px-6 py-10">
+  <h2 class="text-2xl font-bold text-center mb-6">FTG CHRISTMAS BOXES</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+    <!-- ITEM 1 -->
+    <div class="orderitem bg-white shadow rounded-lg overflow-hidden">
+      <img src="images/310.jpg" alt="Christmas Bites" class="w-full h-40 object-cover">
+      <div class="p-4 text-center">
+        <p class="font-semibold">FTG Christmas Bites Box</p>
+        <p class="text-sm text-gray-600">Collect from 22nd Dec</p>
+        <p class="font-bold mt-1">$15.00</p>
+        <button class="mt-2 w-full bg-indigo-600 text-white py-2 rounded hover:bg-indigo-700">Add to Cart</button>
+      </div>
+    </div>
+
+    <!-- ITEM 2 -->
+    <div class="orderitem bg-white shadow rounded-lg overflow-hidden">
+      <img src="images/192_1.jpg" alt="Northern Pie" class="w-full h-40 object-cover">
+      <div class="p-4 text-center">
+        <p class="font-semibold">FTG Northern Pies Christmas Pie Box</p>
+        <p class="text-sm text-gray-600">Collect from 22nd Dec</p>
+        <p class="font-bold mt-1">$10.00</p>
+        <button class="mt-2 w-full bg-indigo-600 text-white py-2 rounded hover:bg-indigo-700">Add to Cart</button>
+      </div>
+    </div>
+
+    <!-- ITEM 3 -->
+    <div class="orderitem bg-white shadow rounded-lg overflow-hidden">
+      <img src="images/278_1.jpg" alt="12 Cheeses" class="w-full h-40 object-cover">
+      <div class="p-4 text-center">
+        <p class="font-semibold">FTG 12 Cheeses of Christmas Platter Box</p>
+        <p class="text-sm text-gray-600">Collect from 21st Dec</p>
+        <p class="font-bold mt-1">$20.00</p>
+        <!--<button class="mt-2 w-full bg-gray-400 text-white py-2 rounded cursor-not-allowed" disabled>Out of Stock</button>-->
+     <button disabled class="mt-2 w-full bg-gray-300 text-gray-500 py-2 rounded cursor-not-allowed">Out Of Stock</button>
+
+        </div>
+    </div>
+
+    <!-- ITEM 4 -->
+    <div class="orderitem bg-white shadow rounded-lg overflow-hidden">
+      <img src="images/720290.jpg" alt="Party Platter" class="w-full h-40 object-cover">
+      <div class="p-4 text-center">
+        <p class="font-semibold">FTG Party Platter Box</p>
+        <p class="text-sm text-gray-600">Collect from 21st Dec</p>
+        <p class="font-bold mt-1">$28.00</p>
+        <button class="mt-2 w-full bg-gray-400 text-white py-2 rounded cursor-not-allowed" disabled>Out of Stock</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION: CHRISTMAS DESSERTS -->
+<section class="px-6 py-10">
+  <h2 class="text-2xl font-bold text-center mb-6">DON'T FORGET DESSERT FOR YOUR CHRISTMAS</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+    <div class="orderitem bg-white shadow rounded-lg overflow-hidden">
+      <img src="images/305_1.jpg" alt="Yule Log" class="w-full h-40 object-cover">
+      <div class="p-4 text-center">
+        <p class="font-semibold">FTG Yule Log</p>
+        <p class="text-sm text-gray-600">Collect from 29th Dec</p>
+        <p class="font-bold mt-1">$5.00</p>
+        <button class="mt-2 w-full bg-indigo-600 text-white py-2 rounded hover:bg-indigo-700">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="orderitem bg-white shadow rounded-lg overflow-hidden">
+      <img src="images/313.jpg" alt="Mince Pie" class="w-full h-40 object-cover">
+      <div class="p-4 text-center">
+        <p class="font-semibold">FTG Mini Mince Pie Selection</p>
+        <p class="text-sm text-gray-600">Collect from 29th Dec</p>
+        <p class="font-bold mt-1">$3.50</p>
+        <button class="mt-2 w-full bg-indigo-600 text-white py-2 rounded hover:bg-indigo-700">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="orderitem bg-white shadow rounded-lg overflow-hidden">
+      <img src="images/307_1.jpg" alt="Cupcake" class="w-full h-40 object-cover">
+      <div class="p-4 text-center">
+        <p class="font-semibold">FTG Festive Cupcake Selection</p>
+        <p class="text-sm text-gray-600">Collect from 29th Dec</p>
+        <p class="font-bold mt-1">$25.00</p>
+        <button class="mt-2 w-full bg-indigo-600 text-white py-2 rounded hover:bg-indigo-700">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="orderitem bg-white shadow rounded-lg overflow-hidden">
+      <img src="images/306_1.jpg" alt="Yule Cake" class="w-full h-40 object-cover">
+      <div class="p-4 text-center">
+        <p class="font-semibold">FTG Festive Yule Cake</p>
+        <p class="text-sm text-gray-600">Collect from 29th Dec</p>
+        <p class="font-bold mt-1">$25.00</p>
+        <button class="mt-2 w-full bg-indigo-600 text-white py-2 rounded hover:bg-indigo-700">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- SECTION: NEW YEAR'S EVE CENTREPIECE -->
+<section class="px-6 py-10">
+  <h2 class="text-2xl font-bold text-center mb-6">YOUR NEW YEAR'S EVE CENTREPIECE</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+    <div class="orderitem bg-white shadow rounded-lg overflow-hidden">
+      <img src="images/082.jpg" alt="Beef" class="w-full h-40 object-cover">
+      <div class="p-4 text-center">
+        <p class="font-semibold">FTG British Extra Matured Bone In Forerib of Beef</p>
+        <p class="text-sm text-gray-600">Collect from 29th Dec</p>
+        <p class="font-bold mt-1">$65.00</p>
+        <button class="mt-2 w-full bg-indigo-600 text-white py-2 rounded hover:bg-indigo-700">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="orderitem bg-white shadow rounded-lg overflow-hidden">
+      <img src="images/092.jpg" alt="Lamb Saddle" class="w-full h-40 object-cover">
+      <div class="p-4 text-center">
+        <p class="font-semibold">FTG British Lamb Saddle with Apple & Cranberry Stuffing</p>
+        <p class="text-sm text-gray-600">Collect from 29th Dec</p>
+        <p class="font-bold mt-1">$36.00</p>
+        <button class="mt-2 w-full bg-indigo-600 text-white py-2 rounded hover:bg-indigo-700">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="orderitem bg-white shadow rounded-lg overflow-hidden">
+      <img src="images/067.jpg" alt="Dry Aged Beef" class="w-full h-40 object-cover">
+      <div class="p-4 text-center">
+        <p class="font-semibold">FTG Dry Aged Beef, Pork & Venison</p>
+        <p class="text-sm text-gray-600">Collect from 29th Dec</p>
+        <p class="font-bold mt-1">$74.00</p>
+        <button class="mt-2 w-full bg-indigo-600 text-white py-2 rounded hover:bg-indigo-700">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="orderitem bg-white shadow rounded-lg overflow-hidden">
+      <img src="images/080.jpg" alt="Boned Duck" class="w-full h-40 object-cover">
+      <div class="p-4 text-center">
+        <p class="font-semibold">Furness Boned Duck with Layers of Pheasant Meat</p>
+        <p class="text-sm text-gray-600">Collect from 29th Dec</p>
+        <p class="font-bold mt-1">$34.00</p>
+        <button class="mt-2 w-full bg-indigo-600 text-white py-2 rounded hover:bg-indigo-700">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION: NEW YEAR'S PARTY FOOD -->
+<section class="px-6 py-10">
+  <h2 class="text-2xl font-bold text-center mb-6">NEW YEAR'S PARTY FOOD</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+    <div class="orderitem bg-white shadow rounded-lg overflow-hidden">
+      <img src="images/107.jpg" alt="Gammon" class="w-full h-40 object-cover">
+      <div class="p-4 text-center">
+        <p class="font-semibold">FTG Honey Roast British Gammon Ham</p>
+        <p class="text-sm text-gray-600">Collect from 29th Dec</p>
+        <p class="font-bold mt-1">$14.00</p>
+        <button class="mt-2 w-full bg-indigo-600 text-white py-2 rounded hover:bg-indigo-700">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="orderitem bg-white shadow rounded-lg overflow-hidden">
+      <img src="images/233.jpg" alt="Camembert Bites" class="w-full h-40 object-cover">
+      <div class="p-4 text-center">
+        <p class="font-semibold">FTG Camembert Bites</p>
+        <p class="text-sm text-gray-600">Collect from 29th Dec</p>
+        <p class="font-bold mt-1">$7.50</p>
+        <button class="mt-2 w-full bg-indigo-600 text-white py-2 rounded hover:bg-indigo-700">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="orderitem bg-white shadow rounded-lg overflow-hidden">
+      <img src="images/215.jpg" alt="Goujons" class="w-full h-40 object-cover">
+      <div class="p-4 text-center">
+        <p class="font-semibold">FTG Chicken Goujons with Garlic Mayo Dip</p>
+        <p class="text-sm text-gray-600">Collect from 29th Dec</p>
+        <p class="font-bold mt-1">$7.00</p>
+        <button class="mt-2 w-full bg-indigo-600 text-white py-2 rounded hover:bg-indigo-700">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="orderitem bg-white shadow rounded-lg overflow-hidden">
+      <img src="images/207_2.jpg" alt="Yakitori Chicken" class="w-full h-40 object-cover">
+      <div class="p-4 text-center">
+        <p class="font-semibold">FTG Sticky Yakitori Chicken Kebabs</p>
+        <p class="text-sm text-gray-600">Collect from 29th Dec</p>
+        <p class="font-bold mt-1">$7.50</p>
+        <button class="mt-2 w-full bg-indigo-600 text-white py-2 rounded hover:bg-indigo-700">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW TO ORDER -->
+<section class="px-6 py-12 bg-gray-100">
+  <h2 class="text-2xl font-bold text-center mb-6">HOW TO ORDER</h2>
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
+
+    <div>
+      <img src="images/300x100_1.png" alt="Browse" class="mx-auto mb-2 h-20">
+      <p class="font-semibold text-indigo-700">BROWSE</p>
+      <p class="text-sm">Browse the products you wish to order and add them to your basket.</p>
+    </div>
+
+    <div>
+      <img src="images/300x100_2.png" alt="Availability" class="mx-auto mb-2 h-20">
+      <p class="font-semibold text-indigo-700">AVAILABILITY</p>
+      <p class="text-sm">Check lead times and cut-off dates for each product.</p>
+    </div>
+
+    <div>
+      <img src="images/300x100_3.png" alt="Order" class="mx-auto mb-2 h-20">
+      <p class="font-semibold text-indigo-700">ORDER</p>
+      <p class="text-sm">Complete your order by paying a £20 deposit and choosing collection slot.</p>
+    </div>
+
+    <div>
+      <img src="images/300x100_4.png" alt="Collect" class="mx-auto mb-2 h-20">
+      <p class="font-semibold text-indigo-700">COLLECT</p>
+      <p class="text-sm">Collect your order from our store and pay the balance.</p>
+    </div>
+
+  </div>
+</section>
+
+    <!-- SPARK REWARDS INFO SECTION -->
+<section class="px-6 py-10 text-center bg-yellow-50 border-t border-b border-yellow-300">
+  <h2 class="text-2xl font-bold text-yellow-700 mb-4">🎁 What Are Spark Rewards?</h2>
+  <p class="max-w-3xl mx-auto text-gray-700 mb-4">
+    Spark Rewards are surprise gifts and exclusive discounts you receive when you pre-order your holiday meals with your registered Spark card.
+    Every time you place an order, you earn a chance to receive a Spark treat — from free desserts to bonus savings!
+  </p>
+  <p class="text-gray-700">
+    Be sure to present your card during checkout or enter your Spark ID online. The more you order, the more you sparkle ✨
+  </p>
+</section>
+<section class="bg-white py-12 px-6 text-center border-t">
+  <h2 class="text-2xl font-bold text-indigo-700 mb-6">Why Choose Food-To-Go?</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto text-sm text-gray-700">
+    <div><span class="text-green-600 text-xl font-bold">✅</span> Fresh, Local Ingredients</div>
+    <div><span class="text-green-600 text-xl font-bold">🚚</span> Reliable Pickup & Delivery</div>
+    <div><span class="text-green-600 text-xl font-bold">🎉</span> Seasonal & Festive Specialties</div>
+    <div><span class="text-green-600 text-xl font-bold">💳</span> Safe & Secure Payments</div>
+  </div>
+</section>
+<section class="bg-blue-50 py-10 px-6 text-center">
+  <h2 class="text-xl font-bold text-blue-800 mb-3">Satisfaction Guaranteed</h2>
+  <p class="max-w-xl mx-auto text-sm text-gray-700">
+    If you’re not happy with your order, contact us within 24 hours for a replacement or refund. We want every meal to be a celebration!
+  </p>
+</section>
+<section class="bg-yellow-100 py-10 px-6 text-center">
+  <h2 class="text-xl font-bold text-yellow-800 mb-3">Stay in the Know!</h2>
+  <p class="text-sm text-gray-700 mb-4">Sign up for early access to offers, seasonal updates, and Spark Reward exclusives.</p>
+  <form class="max-w-sm mx-auto flex flex-col sm:flex-row gap-3">
+    <input type="email" placeholder="Your email address" class="flex-1 px-4 py-2 rounded border border-gray-300" required />
+    <button type="submit" class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">Subscribe</button>
+  </form>
+</section>
+<section class="bg-white py-10 px-6 text-center">
+  <h2 class="text-xl font-bold text-green-700 mb-4">Trusted by Thousands</h2>
+  <div class="flex flex-wrap justify-center gap-6 text-sm text-gray-700">
+    <span class="border rounded-full px-4 py-1 bg-green-100">Top 10 Holiday Box – 2024</span>
+    <span class="border rounded-full px-4 py-1 bg-green-100">5-Star Delivery Service</span>
+    <span class="border rounded-full px-4 py-1 bg-green-100">Certified Fresh Partners</span>
+    <span class="border rounded-full px-4 py-1 bg-green-100">Spark Reward Leader – 2025</span>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-gray-900 text-white px-6 py-12 mt-12 text-sm">
+  <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+    <!-- TERMS -->
+    <div>
+      <h3 class="text-yellow-400 font-semibold mb-3">TERMS</h3>
+      <ul class="space-y-1">
+        <li><a href="Terms.html" class="hover:underline">Terms of Use</a></li>
+        <li><a href="Terms.html" class="hover:underline">Terms &amp; Conditions</a></li>
+        <li><a href="Terms.html" class="hover:underline">Privacy Policy</a></li>
+        <li><a href="Terms.html" class="hover:underline">Cookie Policy</a></li>
+      </ul>
+    </div>
+
+    <!-- HELP & INFO -->
+    <div>
+      <h3 class="text-yellow-400 font-semibold mb-3">HELP &amp; INFORMATION</h3>
+      <ul class="space-y-1">
+        <li><a href="Help.html" class="hover:underline">How to order</a></li>
+        <li><a href="Information.html" class="hover:underline">Christmas collection information</a></li>
+        <li><a href="Information.html" class="hover:underline">Christmas delivery information</a></li>
+        <li><a href="Information.html" class="hover:underline">New Year collection information</a></li>
+        <li><a href="Information.html" class="hover:underline">New Year delivery information</a></li>
+        <li><a href="Help.html" class="hover:underline">How to use a coupon code</a></li>
+        <li><a href="Information.html" class="hover:underline">About us</a></li>
+        <li><a href="FAQ.html" class="hover:underline">FAQs</a></li>
+        <li><a href="ContactUs.html" class="hover:underline">Contact us</a></li>
+      </ul>
+    </div>
+
+    <!-- OPEN HOURS -->
+    <div>
+      <h3 class="text-yellow-400 font-semibold mb-3">OPEN HOURS</h3>
+      <div class="grid grid-cols-2 gap-2">
+        <div class="space-y-1">
+          <p>Monday</p>
+          <p>Tuesday</p>
+          <p>Wednesday</p>
+          <p>Thursday</p>
+          <p>Friday</p>
+          <p>Saturday</p>
+          <p>Sunday</p>
+        </div>
+        <div class="space-y-1 text-right">
+          <p>9:00 - 21:00</p>
+          <p>9:00 - 21:00</p>
+          <p>9:00 - 21:00</p>
+          <p>9:00 - 21:00</p>
+          <p>9:00 - 21:00</p>
+          <p>9:00 - 21:00</p>
+          <p>Closed</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="my-6 border-gray-700" />
+
+  <!-- PAYMENT METHODS -->
+  <div class="text-center mb-4">
+    <p class="uppercase font-semibold text-sm text-gray-400 mb-2">We Accept</p>
+    <div class="flex justify-center gap-4">
+      <img src="images/visa-45x29.png" alt="Visa" class="h-6" />
+      <img src="images/maestro-45x36_1_.png" alt="Maestro" class="h-7" />
+      <img src="images/mastercard-45x32_1_.png" alt="Mastercard" class="h-6" />
+    </div>
+  </div>
+
+  <!-- COPYRIGHT -->
+  <p class="text-center text-gray-400 mt-4">
+    &copy; 2025 Food To GO | For any enquiries contact:
+    <a href="mailto:foodtogofestiv@gmail.com" class="text-blue-300 underline">foodtogofestiv@gmail.com</a>
+  </p>
+</footer>
+<!-- Snackbar -->
+<div id="snackbar" class="fixed bottom-6 right-6 bg-indigo-600 text-white py-2 px-4 rounded shadow-lg hidden z-50">
+  ✅ Item added to cart!
+</div>
+
+<!-- Login Modal -->
+<div id="loginModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+  <div class="bg-white rounded-lg shadow-lg p-6 w-80">
+    <h2 class="text-xl font-bold mb-4">Sign In</h2>
+    <input type="email" placeholder="Email" class="w-full border px-3 py-2 mb-3 rounded" />
+    <input type="password" placeholder="Password" class="w-full border px-3 py-2 mb-4 rounded" />
+    <button class="bg-indigo-600 text-white w-full py-2 rounded hover:bg-indigo-700">Login</button>
+    <button onclick="document.getElementById('loginModal').classList.add('hidden')" class="text-sm mt-3 text-indigo-600 hover:underline block w-full text-center">Cancel</button>
+  </div>
+</div>
+
+<!-- Side Cart Panel -->
+<div id="sideCart" class="fixed right-0 top-0 h-full w-80 bg-white shadow-lg transform translate-x-full transition-transform duration-300 z-50">
+  <div class="flex justify-between items-center p-4 border-b">
+    <h2 class="text-xl font-bold">Your Cart</h2>
+    <button onclick="toggleCart()" class="text-red-600 text-lg">&times;</button>
+  </div>
+  <div id="cartItems" class="p-4 space-y-4 text-gray-700 text-sm">
+    <!-- Items will appear here -->
+  </div>
+    <div id="cartSubtotal" class="p-4 border-t font-semibold text-right text-indigo-700">
+  Subtotal: $0.00
+</div>
+</div>
+
+    
+
+<!-- Overlay -->
+<div id="cartOverlay" class="fixed inset-0 bg-black bg-opacity-40 hidden z-40" onclick="toggleCart()"></div>
+
+<!-- JS -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  let count = 0;
+  const badge = document.getElementById("cart-badge");
+  const cartItems = document.getElementById("cartItems");
+          let subtotal = 0;
+  const buttons = document.querySelectorAll(".orderitem button:not([disabled])");
+  buttons.forEach(button => {
+    button.addEventListener("click", () => {
+      count++;
+      badge.innerText = count;
+        
+                // Update subtotal
+
+        const subtotalDiv = document.getElementById("cartSubtotal");
+
+        function updateSubtotal(amount) {
+            subtotal += amount;
+            subtotalDiv.textContent = `Subtotal: $${subtotal.toFixed(2)}`;
+        }    
+
+      const product = button.closest(".orderitem");
+      const title = product.querySelector("p").innerText;
+      const price = product.querySelectorAll("p")[2].innerText;
+
+      const item = document.createElement("div");
+      item.className = "flex justify-between border-b pb-2";
+      item.innerHTML = `<span>${title}</span><span class="font-semibold">${price}</span>`;
+      cartItems.appendChild(item);
+    
+
+
+        const priceValue = parseFloat(price.replace(/[^0-9.]/g, ""));
+        updateSubtotal(priceValue);
+        
+
+      const snackbar = document.getElementById("snackbar");
+      snackbar.classList.remove("hidden");
+      setTimeout(() => snackbar.classList.add("hidden"), 2000);
+    });
+  });
+});
+
+function toggleCart() {
+  const cart = document.getElementById("sideCart");
+  const overlay = document.getElementById("cartOverlay");
+  cart.classList.toggle("translate-x-0");
+  cart.classList.toggle("translate-x-full");
+  overlay.classList.toggle("hidden");
+}
+</script>
+</body>
+</html>
+

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Information | Food-To-Go</title>
+  <link rel="stylesheet" href="css/Style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+<header class="bg-gray-900 text-white px-6 py-4 flex justify-between items-center sticky top-0 z-50 shadow">
+  <a href="Homepage.html">
+    <img src="images/FoodToGoLogo.png" alt="Food To Go Logo" class="h-12">
+  </a>
+  <h1 class="text-2xl font-bold text-center absolute left-1/2 transform -translate-x-1/2" style="font-family: 'Urbanist', sans-serif;">Food-To-Go</h1>
+  <div class="flex items-center space-x-4">
+    <button onclick="document.getElementById('loginModal').classList.remove('hidden')" class="text-sm bg-white text-gray-900 px-3 py-1.5 rounded hover:bg-gray-200 transition">Login</button>
+    <button onclick="toggleCart()" class="relative ml-4">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-1.2 6M17 13l1.2 6M6 19h12"/>
+      </svg>
+      <span id="cart-badge" class="absolute -top-2 -right-2 bg-red-600 text-white text-xs px-1.5 rounded-full">0</span>
+    </button>
+  </div>
+</header>
+
+<nav class="bg-gray-800 text-white">
+  <ul class="flex flex-col items-center space-y-3 py-6 text-lg font-semibold">
+    <li><a href="index.html" class="hover:text-yellow-300">HOME</a></li>
+    <li><a href="Christmas.html" class="hover:text-yellow-300">CHRISTMAS</a></li>
+    <li><a href="Newyear.html" class="hover:text-yellow-300">NEW YEAR</a></li>
+    <li><a href="Feeds.html" class="hover:text-yellow-300">FEEDS</a></li>
+    <li><a href="FAQ.html" class="hover:text-yellow-300">FAQ</a></li>
+    <li><a href="ContactUs.html" class="hover:text-yellow-300">CONTACT US</a></li>
+  </ul>
+</nav>
+
+<section class="max-w-4xl mx-auto px-6 py-12">
+ <div class="space-y-6 text-sm text-gray-700">
+  <!-- About Us -->
+  <div>
+    <h3 class="font-semibold text-indigo-700 mb-1">👨‍🍳 About Us</h3>
+    <p>At <strong>Food-To-Go</strong>, we are passionate about delivering festive joy through curated holiday meal boxes. With locally sourced ingredients and handcrafted menus, our mission is to make every celebration hassle-free and delicious. From traditional roasts to gourmet desserts, we’ve been trusted by thousands of families since 2020.</p>
+  </div>
+  <!-- Christmas Collection Info -->
+  <div>
+    <h3 class="font-semibold text-indigo-700 mb-1">🎄 Christmas Collection Information</h3>
+    <p>Christmas food orders can be collected between <strong>22nd – 24th December</strong>. You will receive an SMS and email confirmation with your order number and pickup slot. Collection counters are clearly marked at each of our store locations for a smooth experience.</p>
+  </div>
+
+  <!-- Christmas Delivery Info -->
+  <div>
+    <h3 class="font-semibold text-indigo-700 mb-1">🚚 Christmas Delivery Information</h3>
+    <p>Home delivery is available from <strong>20th December</strong>. Ensure someone is available at the delivery address between 9:00 AM – 8:00 PM. Products are packed in insulated boxes to maintain freshness during transit.</p>
+  </div>
+
+  <!-- New Year Collection Info -->
+  <div>
+    <h3 class="font-semibold text-indigo-700 mb-1">🎆 New Year Collection Information</h3>
+    <p>Pre-orders for New Year’s Eve dishes will be available for collection from <strong>29th to 31st December</strong>. Arrive at your selected time slot to avoid queues. Please bring your Spark ID or order receipt for faster verification.</p>
+  </div>
+
+  <!-- New Year Delivery Info -->
+  <div>
+    <h3 class="font-semibold text-indigo-700 mb-1">📦 New Year Delivery Information</h3>
+    <p>New Year delivery begins on <strong>28th December</strong> with limited delivery slots. Ensure your address and contact details are correct at checkout. Contact support at least 24 hours before for rescheduling.</p>
+  </div>
+
+
+</div>
+
+</section>
+
+<footer class="bg-gray-900 text-white px-6 py-12 mt-12 text-sm">
+  <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+    <!-- TERMS -->
+    <div>
+      <h3 class="text-yellow-400 font-semibold mb-3">TERMS</h3>
+      <ul class="space-y-1">
+        <li><a href="Terms.html" class="hover:underline">Terms of Use</a></li>
+        <li><a href="Terms.html" class="hover:underline">Terms &amp; Conditions</a></li>
+        <li><a href="Terms.html" class="hover:underline">Privacy Policy</a></li>
+        <li><a href="Terms.html" class="hover:underline">Cookie Policy</a></li>
+      </ul>
+    </div>
+
+    <!-- HELP & INFO -->
+    <div>
+      <h3 class="text-yellow-400 font-semibold mb-3">HELP &amp; INFORMATION</h3>
+      <ul class="space-y-1">
+        <li><a href="Help.html" class="hover:underline">How to order</a></li>
+        <li><a href="Information.html" class="hover:underline">Christmas collection information</a></li>
+        <li><a href="Information.html" class="hover:underline">Christmas delivery information</a></li>
+        <li><a href="Information.html" class="hover:underline">New Year collection information</a></li>
+        <li><a href="Information.html" class="hover:underline">New Year delivery information</a></li>
+        <li><a href="Help.html" class="hover:underline">How to use a coupon code</a></li>
+        <li><a href="Information.html" class="hover:underline">About us</a></li>
+        <li><a href="FAQ.html" class="hover:underline">FAQs</a></li>
+        <li><a href="ContactUs.html" class="hover:underline">Contact us</a></li>
+      </ul>
+    </div>
+
+    <!-- OPEN HOURS -->
+    <div>
+      <h3 class="text-yellow-400 font-semibold mb-3">OPEN HOURS</h3>
+      <div class="grid grid-cols-2 gap-2">
+        <div class="space-y-1">
+          <p>Monday</p>
+          <p>Tuesday</p>
+          <p>Wednesday</p>
+          <p>Thursday</p>
+          <p>Friday</p>
+          <p>Saturday</p>
+          <p>Sunday</p>
+        </div>
+        <div class="space-y-1 text-right">
+          <p>9:00 - 21:00</p>
+          <p>9:00 - 21:00</p>
+          <p>9:00 - 21:00</p>
+          <p>9:00 - 21:00</p>
+          <p>9:00 - 21:00</p>
+          <p>9:00 - 21:00</p>
+          <p>Closed</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="my-6 border-gray-700" />
+
+  <!-- PAYMENT METHODS -->
+  <div class="text-center mb-4">
+    <p class="uppercase font-semibold text-sm text-gray-400 mb-2">We Accept</p>
+    <div class="flex justify-center gap-4">
+      <img src="images/visa-45x29.png" alt="Visa" class="h-6" />
+      <img src="images/maestro-45x36_1_.png" alt="Maestro" class="h-7" />
+      <img src="images/mastercard-45x32_1_.png" alt="Mastercard" class="h-6" />
+    </div>
+  </div>
+
+  <!-- COPYRIGHT -->
+  <p class="text-center text-gray-400 mt-4">
+    &copy; 2025 Food To GO | For any enquiries contact:
+    <a href="mailto:foodtogofestiv@gmail.com" class="text-blue-300 underline">foodtogofestiv@gmail.com</a>
+  </p>
+</footer>
+
+</body>
+</html>
