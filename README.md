@@ -7,6 +7,15 @@ This project is a **2025 redesign** of an original 2020 version — rebuilt usin
 
 ---
 
+## 🔗 Live Project
+
+🍽️ **Explore Food-To-Go:**  
+👉 https://foodtogo2025.netlify.app/
+
+Experience the full festive ordering flow — optimized for desktop, tablet, and mobile devices.
+
+---
+
 ## ✨ Project Highlights
 
 ### 🎅 Christmas & New Year Pre-Ordering  
