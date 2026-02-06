@@ -9,8 +9,7 @@ This project is a **2025 redesign** of an original 2020 version — rebuilt usin
 
 ## 🔗 Live Project
 
-🍽️ **Explore Food-To-Go:**  
-👉 https://foodtogo2025.netlify.app/
+🍽️ **Explore Food-To-Go:**  https://foodtogo2025.netlify.app/
 
 Experience the full festive ordering flow — optimized for desktop, tablet, and mobile devices.
 
@@ -50,7 +49,7 @@ Built using **Tailwind CSS** and fluid grid systems for a consistent cross-devic
 
 ### 🧮 Checkout Simulation + Cart Badge  
 Interactive cart system with:
-- Live cart item counter 🔴  
+- Live cart item counter  
 - Real-time subtotal calculations  
 - “Out of Stock” disabled states  
 - Simulated checkout flow  
@@ -93,8 +92,7 @@ Rich, festive UI elements including:
 - ⏳ Countdown timers  
 - 💬 Customer testimonials  
 - 📖 Blog highlights  
-- 🔥 Trending dishes  
-- 📅 Downloadable planners  
+- 🔥 Trending dishes   
 
 ---
 
@@ -115,7 +113,6 @@ To transform a **2020 holiday food ordering site** into a **modern, responsive, 
 - 🎨 CSS3  
 - 💨 Tailwind CSS  
 - ⚙️ Vanilla JavaScript  
-- 🐘 PHP  
 - 📱 Responsive Web Design  
 
 ---
